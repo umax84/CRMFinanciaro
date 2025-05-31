@@ -24,9 +24,16 @@ function calcular() {
   let resultado = `
     <span style="color:green;">💳 Pagado por cliente: $${pagado.toFixed(2)}</span><br>
     💵 Total Adeudado: $${adeuda.toFixed(2)}<br>
-    🧾 IVA: $${iva.toFixed(2)}<br>
-    📥 Ingresos por otros productos: $${pasivos.toFixed(2)}<br>
+    💼 Ventas: $${ventas.toFixed(2)}<br>
+    📦 Costos y Gastos: $${costos.toFixed(2)}<br>
+    ⛽ Gasolina: $${gasolina.toFixed(2)}<br>
+    ✈️ Boletos: $${boletos.toFixed(2)}<br>
+    🚛 Fletes: $${fletes.toFixed(2)}<br>
+    🍽️ Comida: $${comida.toFixed(2)}<br>
+    🚕 Taxi: $${taxi.toFixed(2)}<br>
     🧰 Herramientas compradas (activos): $${activos.toFixed(2)}<br>
+    📥 Ingresos por otros productos (pasivos): $${pasivos.toFixed(2)}<br>
+    🧾 IVA (16%): $${iva.toFixed(2)}<br>
     🧮 Gastos Totales: $${gastosTotales.toFixed(2)}<br>
     💼 Balance Neto: $${balanceNeto.toFixed(2)}<br>
   `;
@@ -34,7 +41,10 @@ function calcular() {
   const totalParaCubrir = gastosTotales + empresa + iva;
   const restante = pagado - totalParaCubrir;
 
-  if (restante >= socio * 3) {
+  if (utilidadNeta < 0) {
+    resultado += `<span style="color:red; font-weight:bold;">⚠️ Utilidad Neta NEGATIVA. No se puede pagar ni a la empresa ni a los socios.</span><br>`;
+    resultado += `<span style="color:red;">💣 Deuda en contra por malas decisiones: $${Math.abs(utilidadNeta).toFixed(2)}</span><br>`;
+  } else if (restante >= socio * 3) {
     resultado += `<span style="color:green;">✅ Se puede pagar todo, incluyendo empresa y socios.</span><br>`;
     resultado += `🏢 Empresa (25%): $${empresa.toFixed(2)}<br>`;
     resultado += `👤 Socio 1: $${socio.toFixed(2)}<br>`;
