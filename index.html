@@ -38,27 +38,32 @@
       </div>
 
       <div class="form-group">
-        <label for="activos">Activos
+        <label for="activos">Pagos Recibidos del Cliente
           <span class="tooltip-icon" onclick="toggleTooltip('activosTooltip')">❓</span>
         </label>
         <input type="number" id="activos" />
-        <div class="tooltip-text" id="activosTooltip">Todo lo que la empresa posee: dinero, inventario, equipo, etc.</div>
+        <div class="tooltip-text" id="activosTooltip">Anticipos o pagos extras que el cliente ya ha realizado.</div>
       </div>
 
       <div class="form-group">
-        <label for="pasivos">Pasivos
+        <label for="pasivos">Pendiente por Pagar del Cliente
           <span class="tooltip-icon" onclick="toggleTooltip('pasivosTooltip')">❓</span>
         </label>
         <input type="number" id="pasivos" />
-        <div class="tooltip-text" id="pasivosTooltip">Deudas o pagos pendientes como proveedores, sueldos, etc.</div>
+        <div class="tooltip-text" id="pasivosTooltip">Monto que el cliente aún debe pagar.</div>
       </div>
 
-      <button type="button" onclick="calcular()">Calcular y Enviar</button>
+      
+    <button type="button" onclick="calcular()">Calcular</button>
+    <button type="button" onclick="enviarWhatsApp()">Enviar a WhatsApp</button>
+    <button type="button" onclick="generarPDFGlobal()">Descargar PDF</button>
+    
     </form>
 
     <div id="resultados" class="resultados"></div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
