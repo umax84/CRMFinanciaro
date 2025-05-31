@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Financiero</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>CRM Financiero - MTK</h1>
+
+    <section>
+      <h2>Ingresos</h2>
+      <label>Ventas totales (ingresos generados por servicios o productos): 
+        <input type="number" id="ventas" />
+      </label>
+    </section>
+
+    <section>
+      <h2>Gastos</h2>
+      <label>Gastos de ventas (materiales, comisiones, logística): 
+        <input type="number" id="gastoVentas" />
+      </label>
+      <label>Gastos administrativos (oficina, sueldos, servicios): 
+        <input type="number" id="gastoAdmin" />
+      </label>
+      <label>Gastos de gasolina (uso de vehículos de empresa): 
+        <input type="number" id="gastoGasolina" />
+      </label>
+      <label>Otros gastos (publicidad, licencias, imprevistos): 
+        <input type="number" id="gastoOtros" />
+      </label>
+    </section>
+
+    <section>
+      <h2>Balance General</h2>
+      <label>Activos (dinero en cuentas, inventario, bienes): 
+        <input type="number" id="activos" />
+      </label>
+      <label>Pasivos (deudas, pagos pendientes): 
+        <input type="number" id="pasivos" />
+      </label>
+    </section>
+
+    <section>
+      <button onclick="calcular()">Calcular</button>
+    </section>
+
+    <section id="resultados" class="hidden">
+      <h2>Resultados</h2>
+      <p>Utilidad Neta: <span id="utilidad"></span></p>
+      <p>Balance Neto: <span id="balance"></span></p>
+      <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+    </section>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
