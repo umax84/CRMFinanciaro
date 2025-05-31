@@ -3,43 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CRM Financiero</title>
+  <title>CRM Financiero - MTK</title>
   <link rel="stylesheet" href="style.css" />
+  <style media="print">
+    body * {
+      visibility: hidden;
+    }
+    .container, .container * {
+      visibility: visible;
+    }
+    .container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+    button {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
+    <img src="https://macrotek.com.mx/wp-content/uploads/2024/01/logo_macrotek_800.png" alt="Logo MTK" class="logo" />
     <h1>CRM Financiero - MTK</h1>
 
     <section>
       <h2>Ingresos</h2>
-      <label>Ventas totales (ingresos generados por servicios o productos): 
-        <input type="number" id="ventas" />
+      <label>Ventas totales: 
+        <input type="number" id="ventas" placeholder="Ej: 50000" />
       </label>
     </section>
 
     <section>
       <h2>Gastos</h2>
-      <label>Gastos de ventas (materiales, comisiones, logística): 
-        <input type="number" id="gastoVentas" />
+      <label>Gastos de ventas: 
+        <input type="number" id="gastoVentas" placeholder="Ej: 10000" />
       </label>
-      <label>Gastos administrativos (oficina, sueldos, servicios): 
-        <input type="number" id="gastoAdmin" />
+      <label>Gastos administrativos: 
+        <input type="number" id="gastoAdmin" placeholder="Ej: 5000" />
       </label>
-      <label>Gastos de gasolina (uso de vehículos de empresa): 
-        <input type="number" id="gastoGasolina" />
+      <label>Gastos de gasolina: 
+        <input type="number" id="gastoGasolina" placeholder="Ej: 2000" />
       </label>
-      <label>Otros gastos (publicidad, licencias, imprevistos): 
-        <input type="number" id="gastoOtros" />
+      <label>Otros gastos: 
+        <input type="number" id="gastoOtros" placeholder="Ej: 3000" />
       </label>
     </section>
 
     <section>
       <h2>Balance General</h2>
-      <label>Activos (dinero en cuentas, inventario, bienes): 
-        <input type="number" id="activos" />
+      <label>Activos: 
+        <input type="number" id="activos" placeholder="Ej: 80000" />
       </label>
-      <label>Pasivos (deudas, pagos pendientes): 
-        <input type="number" id="pasivos" />
+      <label>Pasivos: 
+        <input type="number" id="pasivos" placeholder="Ej: 20000" />
       </label>
     </section>
 
@@ -52,6 +70,7 @@
       <p>Utilidad Neta: <span id="utilidad"></span></p>
       <p>Balance Neto: <span id="balance"></span></p>
       <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+      <button onclick="imprimir()">Imprimir / Guardar como PDF</button>
     </section>
   </div>
 
