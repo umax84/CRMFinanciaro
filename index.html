@@ -2,78 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CRM Financiero - MTK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRM Financiero MTK</title>
   <link rel="stylesheet" href="style.css" />
-  <style media="print">
-    body * {
-      visibility: hidden;
-    }
-    .container, .container * {
-      visibility: visible;
-    }
-    .container {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-    }
-    button {
-      display: none;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://macrotek.com.mx/wp-content/uploads/2024/01/logo_macrotek_800.png" alt="Logo MTK" class="logo" />
-    <h1>CRM Financiero - MTK</h1>
-
-    <section>
-      <h2>Ingresos</h2>
-      <label>Ventas totales: 
-        <input type="number" id="ventas" placeholder="Ej: 50000" />
-      </label>
-    </section>
-
-    <section>
-      <h2>Gastos</h2>
-      <label>Gastos de ventas: 
-        <input type="number" id="gastoVentas" placeholder="Ej: 10000" />
-      </label>
-      <label>Gastos administrativos: 
-        <input type="number" id="gastoAdmin" placeholder="Ej: 5000" />
-      </label>
-      <label>Gastos de gasolina: 
-        <input type="number" id="gastoGasolina" placeholder="Ej: 2000" />
-      </label>
-      <label>Otros gastos: 
-        <input type="number" id="gastoOtros" placeholder="Ej: 3000" />
-      </label>
-    </section>
-
-    <section>
-      <h2>Balance General</h2>
-      <label>Activos: 
-        <input type="number" id="activos" placeholder="Ej: 80000" />
-      </label>
-      <label>Pasivos: 
-        <input type="number" id="pasivos" placeholder="Ej: 20000" />
-      </label>
-    </section>
-
-    <section>
-      <button onclick="calcular()">Calcular</button>
-    </section>
-
+    <img src="https://macrotek.com/wp-content/uploads/2024/01/logo_macrotek_800.png" alt="Logo Macrotek" class="logo" />
+    <h1>CRM Financiero MTK</h1>
+    <form id="finanzasForm">
+      <table>
+        <tr><th colspan="2">Ingresos y Gastos</th></tr>
+        <tr><td>Ventas Totales:</td><td><input type="number" id="ventas" /></td></tr>
+        <tr><td>Gasto en Ventas:</td><td><input type="number" id="gastoVentas" /></td></tr>
+        <tr><td>Gasto Administrativo:</td><td><input type="number" id="gastoAdmin" /></td></tr>
+        <tr><td>Gasto de Gasolina:</td><td><input type="number" id="gastoGasolina" /></td></tr>
+        <tr><td>Otros Gastos:</td><td><input type="number" id="gastoOtros" /></td></tr>
+      </table>
+      <br />
+      <table>
+        <tr><th colspan="2">Balance General</th></tr>
+        <tr><td>Activos:</td><td><input type="number" id="activos" /></td></tr>
+        <tr><td>Pasivos:</td><td><input type="number" id="pasivos" /></td></tr>
+      </table>
+      <br />
+      <button type="button" onclick="calcular()">Calcular</button>
+    </form>
     <section id="resultados" class="hidden">
       <h2>Resultados</h2>
-      <p>Utilidad Neta: <span id="utilidad"></span></p>
-      <p>Balance Neto: <span id="balance"></span></p>
+      <table>
+        <tr><td>IVA (16%):</td><td><span id="iva"></span></td></tr>
+        <tr><td>Utilidad Neta:</td><td><span id="utilidad"></span></td></tr>
+        <tr><td>Balance Neto:</td><td><span id="balance"></span></td></tr>
+      </table>
+      <br />
+      <button onclick="descargarPDF()">Descargar PDF</button>
       <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
-      <button onclick="imprimir()">Imprimir / Guardar como PDF</button>
     </section>
   </div>
-
   <script src="main.js"></script>
 </body>
 </html>
