@@ -12,40 +12,22 @@
     <h1>Formulario Financiero - MTK</h1>
 
     <form id="crmForm">
-      <div class="form-group">
-        <label for="ventas">Ventas Totales</label>
-        <input type="number" id="ventas" placeholder="Total facturado. Ej: 150000" />
-      </div>
+      <div class="form-group"><label for="cotizacion">Número de Cotización</label><input type="text" id="cotizacion" placeholder="Ej: COT-00123" /></div>
+      <div class="form-group"><label for="cliente">Nombre del Cliente</label><input type="text" id="cliente" placeholder="Ej: Juan Pérez" /></div>
+      <div class="form-group"><label for="telefono">Teléfono del Cliente</label><input type="text" id="telefono" placeholder="Ej: 8181234567" /></div>
 
-      <div class="form-group">
-        <label for="costos">Costos y Gastos</label>
-        <input type="number" id="costos" placeholder="Ej: 80000" />
-      </div>
+      <div class="form-group"><label for="ventas">Ventas Totales</label><input type="number" id="ventas" placeholder="Ej: 150000" /></div>
+      <div class="form-group"><label for="costos">Costos y Gastos</label><input type="number" id="costos" placeholder="Ej: 80000" /></div>
+      <div class="form-group"><label for="gasolina">Gasolina</label><input type="number" id="gasolina" placeholder="Ej: 5000" /></div>
+      <div class="form-group"><label for="boletos">Boletos de Vuelo</label><input type="number" id="boletos" placeholder="Ej: 3000" /></div>
+      <div class="form-group"><label for="fletes">Fletes</label><input type="number" id="fletes" placeholder="Ej: 2000" /></div>
+      <div class="form-group"><label for="comida">Comida</label><input type="number" id="comida" placeholder="Ej: 1000" /></div>
+      <div class="form-group"><label for="taxi">Taxi</label><input type="number" id="taxi" placeholder="Ej: 800" /></div>
 
-      <div class="form-group">
-        <label for="gasolina">Gasolina</label>
-        <input type="number" id="gasolina" placeholder="Ej: 5000" />
-      </div>
-
-      <div class="form-group">
-        <label for="activos">Activos</label>
-        <input type="number" id="activos" placeholder="Ej: 200000" />
-      </div>
-
-      <div class="form-group">
-        <label for="pasivos">Pasivos</label>
-        <input type="number" id="pasivos" placeholder="Ej: 100000" />
-      </div>
-
-      <div class="form-group">
-        <label for="pagado">Cliente ha pagado</label>
-        <input type="number" id="pagado" placeholder="Ej: 50000" />
-      </div>
-
-      <div class="form-group">
-        <label for="adeuda">Total Adeudado</label>
-        <input type="number" id="adeuda" placeholder="Ej: 100000" />
-      </div>
+      <div class="form-group"><label for="activos">Activos (herramientas compradas)</label><input type="number" id="activos" placeholder="Ej: 20000" /></div>
+      <div class="form-group"><label for="pasivos">Pasivos (ingresos por otros productos)</label><input type="number" id="pasivos" placeholder="Ej: 5000" /></div>
+      <div class="form-group"><label for="pagado">Cliente ha pagado</label><input type="number" id="pagado" placeholder="Ej: 50000" /></div>
+      <div class="form-group"><label for="adeuda">Total Adeudado</label><input type="number" id="adeuda" placeholder="Ej: 100000" /></div>
 
       <button type="button" onclick="calcular()">Calcular y Enviar</button>
       <button type="button" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
