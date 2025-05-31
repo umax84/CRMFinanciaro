@@ -3,8 +3,8 @@ function calcular() {
   const ventas = parseFloat(document.getElementById('ventas').value) || 0;
   const costos = parseFloat(document.getElementById('costos').value) || 0;
   const gasolina = parseFloat(document.getElementById('gasolina').value) || 0;
-  const activos = parseFloat(document.getElementById('activos').value) || 0; // herramientas compradas
-  const pasivos = parseFloat(document.getElementById('pasivos').value) || 0; // ingresos por otros productos
+  const activos = parseFloat(document.getElementById('activos').value) || 0;
+  const pasivos = parseFloat(document.getElementById('pasivos').value) || 0;
   const pagado = parseFloat(document.getElementById('pagado').value) || 0;
   const adeuda = parseFloat(document.getElementById('adeuda').value) || 0;
   const boletos = parseFloat(document.getElementById('boletos').value) || 0;
@@ -12,9 +12,9 @@ function calcular() {
   const comida = parseFloat(document.getElementById('comida').value) || 0;
   const taxi = parseFloat(document.getElementById('taxi').value) || 0;
 
-  const gastosTotales = costos + gasolina + boletos + fletes + comida + taxi + activos; // activos = herramientas = gasto
+  const gastosTotales = costos + gasolina + boletos + fletes + comida + taxi + activos;
   const iva = ventas * 0.16;
-  const ingresosTotales = ventas + pasivos; // pasivos = ingreso por otros productos
+  const ingresosTotales = ventas + pasivos;
   const utilidadNeta = ingresosTotales - gastosTotales - iva;
   const balanceNeto = ingresosTotales - gastosTotales;
 
@@ -54,6 +54,18 @@ function enviarWhatsApp() {
   const cot = document.getElementById("cotizacion").value;
   const cliente = document.getElementById("cliente").value;
   const tel = document.getElementById("telefono").value;
+  const ventas = document.getElementById("ventas").value;
+  const costos = document.getElementById("costos").value;
+  const gasolina = document.getElementById("gasolina").value;
+  const activos = document.getElementById("activos").value;
+  const pasivos = document.getElementById("pasivos").value;
+  const pagado = document.getElementById("pagado").value;
+  const adeuda = document.getElementById("adeuda").value;
+  const boletos = document.getElementById("boletos").value;
+  const fletes = document.getElementById("fletes").value;
+  const comida = document.getElementById("comida").value;
+  const taxi = document.getElementById("taxi").value;
+
   const resultados = document.getElementById("resultados").innerText;
 
   const mensaje = `*Cotización MTK*
@@ -61,7 +73,22 @@ Cotización: ${cot}
 Cliente: ${cliente}
 Tel: ${tel}
 
-${resultados}`;
+📊 Datos ingresados:
+- Ventas: $${ventas}
+- Costos: $${costos}
+- Gasolina: $${gasolina}
+- Boletos: $${boletos}
+- Fletes: $${fletes}
+- Comida: $${comida}
+- Taxi: $${taxi}
+- Activos (herramientas): $${activos}
+- Pasivos (otros ingresos): $${pasivos}
+- Pagado: $${pagado}
+- Adeudado: $${adeuda}
+
+📈 Resultados:
+${resultados.replace(/<br>/g, '\n').replace(/<[^>]*>/g, '')}`;
+
   const url = `https://wa.me/5218138474143?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 }
