@@ -1,94 +1,70 @@
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f7fa;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f9;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
-
 .container {
-  max-width: 800px;
-  margin: 30px auto;
-  background: #fff;
-  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
 .logo {
-  max-width: 180px;
+  width: 150px;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto 20px;
 }
-
-h1, h2 {
+h1 {
   text-align: center;
-  color: #333;
+  color: #2c3e50;
 }
-
-.form-section h2 {
-  margin-top: 30px;
-  color: #007BFF;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 600;
-}
-
-input[type="number"] {
-  padding: 8px;
-  font-size: 14px;
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 6px;
 }
-
-.buttons {
-  text-align: center;
-  margin-top: 20px;
-}
-
 button {
-  background: #007BFF;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
   color: white;
-  padding: 10px 25px;
   border: none;
-  border-radius: 6px;
   font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #0056b3;
 }
-
-.resultados {
-  margin-top: 30px;
+.tooltip-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  color: #007bff;
+  font-weight: bold;
 }
-
-.grid-results {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-.hidden {
+.tooltip-text {
   display: none;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 105%;
+  width: 250px;
+  z-index: 2;
 }
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+.resultados {
+  margin-top: 20px;
+  font-weight: bold;
 }
