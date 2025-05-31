@@ -1,51 +1,94 @@
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
 }
+
 .container {
-  max-width: 700px;
-  margin: auto;
+  max-width: 800px;
+  margin: 30px auto;
   background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
+
 .logo {
+  max-width: 180px;
   display: block;
-  max-width: 200px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
 }
+
 h1, h2 {
   text-align: center;
+  color: #333;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 15px;
+
+.form-section h2 {
+  margin-top: 30px;
+  color: #007BFF;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
 }
-td, th {
-  border: 1px solid #ddd;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+input[type="number"] {
   padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
-th {
-  background-color: #007BFF;
-  color: white;
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
 }
+
 button {
-  display: inline-block;
-  margin: 10px 5px;
-  padding: 10px 20px;
   background: #007BFF;
   color: white;
+  padding: 10px 25px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
 }
+
 button:hover {
-  background: #0056b3;
+  background-color: #0056b3;
 }
+
+.resultados {
+  margin-top: 30px;
+}
+
+.grid-results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
 .hidden {
   display: none;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

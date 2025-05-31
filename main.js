@@ -1,4 +1,3 @@
-
 function calcular() {
   const ventas = parseFloat(document.getElementById("ventas").value) || 0;
   const gastoVentas = parseFloat(document.getElementById("gastoVentas").value) || 0;
@@ -12,9 +11,10 @@ function calcular() {
   const utilidad = ventas - (gastoVentas + gastoAdmin + gastoGasolina + gastoOtros + iva);
   const balance = activos - pasivos;
 
-  document.getElementById("iva").innerText = `$${iva.toFixed(2)}`;
-  document.getElementById("utilidad").innerText = `$${utilidad.toFixed(2)}`;
-  document.getElementById("balance").innerText = `$${balance.toFixed(2)}`;
+  document.getElementById("iva").textContent = `$${iva.toFixed(2)}`;
+  document.getElementById("utilidad").textContent = `$${utilidad.toFixed(2)}`;
+  document.getElementById("balance").textContent = `$${balance.toFixed(2)}`;
+
   document.getElementById("resultados").classList.remove("hidden");
 }
 
@@ -31,24 +31,19 @@ function enviarWhatsApp() {
   const iva = document.getElementById("iva").innerText;
 
   const mensaje =
-    `📊 Reporte Financiero MTK:%0A` +
+    `📊 *Reporte Financiero MTK*:%0A` +
     `🔹 Ventas Totales: $${ventas}%0A` +
     `🔹 Gasto en Ventas: $${gastoVentas}%0A` +
     `🔹 Gasto Administrativo: $${gastoAdmin}%0A` +
-    `🔹 Gasto Gasolina: $${gastoGasolina}%0A` +
+    `🔹 Gasolina: $${gastoGasolina}%0A` +
     `🔹 Otros Gastos: $${gastoOtros}%0A` +
     `🔹 IVA (16%): ${iva}%0A` +
     `🔹 Activos: $${activos}%0A` +
     `🔹 Pasivos: $${pasivos}%0A` +
-    `----------------------------%0A` +
+    `------------------------%0A` +
     `✅ Utilidad Neta: ${utilidad}%0A` +
     `📈 Balance Neto: ${balance}`;
 
   const telefono = "5218138474143";
-  const url = `https://wa.me/${telefono}?text=${mensaje}`;
-  window.open(url, "_blank");
-}
-
-function descargarPDF() {
-  alert("La funcionalidad PDF estará disponible en la siguiente versión.");
+  window.open(`https://wa.me/${telefono}?text=${mensaje}`, "_blank");
 }

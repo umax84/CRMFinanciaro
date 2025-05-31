@@ -8,38 +8,47 @@
 </head>
 <body>
   <div class="container">
-    <img src="https://macrotek.com/wp-content/uploads/2024/01/logo_macrotek_800.png" alt="Logo Macrotek" class="logo" />
-    <h1>CRM Financiero MTK</h1>
-    <form id="finanzasForm">
-      <table>
-        <tr><th colspan="2">Ingresos y Gastos</th></tr>
-        <tr><td>Ventas Totales:</td><td><input type="number" id="ventas" /></td></tr>
-        <tr><td>Gasto en Ventas:</td><td><input type="number" id="gastoVentas" /></td></tr>
-        <tr><td>Gasto Administrativo:</td><td><input type="number" id="gastoAdmin" /></td></tr>
-        <tr><td>Gasto de Gasolina:</td><td><input type="number" id="gastoGasolina" /></td></tr>
-        <tr><td>Otros Gastos:</td><td><input type="number" id="gastoOtros" /></td></tr>
-      </table>
-      <br />
-      <table>
-        <tr><th colspan="2">Balance General</th></tr>
-        <tr><td>Activos:</td><td><input type="number" id="activos" /></td></tr>
-        <tr><td>Pasivos:</td><td><input type="number" id="pasivos" /></td></tr>
-      </table>
-      <br />
-      <button type="button" onclick="calcular()">Calcular</button>
-    </form>
-    <section id="resultados" class="hidden">
+    <header>
+      <img src="https://macrotek.com/wp-content/uploads/2024/01/logo_macrotek_800.png" alt="Logo Macrotek" class="logo" />
+      <h1>CRM Financiero</h1>
+    </header>
+
+    <section class="form-section">
+      <h2>Ingresos y Gastos</h2>
+      <form id="finanzasForm">
+        <div class="grid">
+          <label>Ventas Totales:<input type="number" id="ventas" /></label>
+          <label>Gasto en Ventas:<input type="number" id="gastoVentas" /></label>
+          <label>Gasto Administrativo:<input type="number" id="gastoAdmin" /></label>
+          <label>Gasolina:<input type="number" id="gastoGasolina" /></label>
+          <label>Otros Gastos:<input type="number" id="gastoOtros" /></label>
+        </div>
+
+        <h2>Balance General</h2>
+        <div class="grid">
+          <label>Activos:<input type="number" id="activos" /></label>
+          <label>Pasivos:<input type="number" id="pasivos" /></label>
+        </div>
+
+        <div class="buttons">
+          <button type="button" onclick="calcular()">Calcular</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultados" class="resultados hidden">
       <h2>Resultados</h2>
-      <table>
-        <tr><td>IVA (16%):</td><td><span id="iva"></span></td></tr>
-        <tr><td>Utilidad Neta:</td><td><span id="utilidad"></span></td></tr>
-        <tr><td>Balance Neto:</td><td><span id="balance"></span></td></tr>
-      </table>
-      <br />
-      <button onclick="descargarPDF()">Descargar PDF</button>
-      <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+      <div class="grid-results">
+        <p><strong>IVA (16%):</strong> <span id="iva"></span></p>
+        <p><strong>Utilidad Neta:</strong> <span id="utilidad"></span></p>
+        <p><strong>Balance Neto:</strong> <span id="balance"></span></p>
+      </div>
+      <div class="buttons">
+        <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+      </div>
     </section>
   </div>
+
   <script src="main.js"></script>
 </body>
 </html>
