@@ -18,7 +18,6 @@ function calcular() {
   const utilidadNeta = ingresosTotales - gastosTotales - iva;
   const balanceNeto = ingresosTotales - gastosTotales;
 
-  const comisionVendedor = ventas * 0.05;
   const empresa = utilidadNeta * 0.25;
   const socio = utilidadNeta * 0.25;
 
@@ -29,11 +28,10 @@ function calcular() {
     📥 Ingresos por otros productos: $${pasivos.toFixed(2)}<br>
     🧰 Herramientas compradas (activos): $${activos.toFixed(2)}<br>
     🧮 Gastos Totales: $${gastosTotales.toFixed(2)}<br>
-    💰 Comisión Vendedor (5%): $${comisionVendedor.toFixed(2)}<br>
     💼 Balance Neto: $${balanceNeto.toFixed(2)}<br>
   `;
 
-  const totalParaCubrir = gastosTotales + comisionVendedor + empresa + iva;
+  const totalParaCubrir = gastosTotales + empresa + iva;
   const restante = pagado - totalParaCubrir;
 
   if (restante >= socio * 3) {
